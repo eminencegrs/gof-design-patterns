@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatterns.Visitor", "DesignPatterns.Visitor\DesignPatterns.Visitor.csproj", "{DCE06EB6-BAB5-4573-AF67-128DBCCDB90C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatterns.Visitor", "Behavioral\DesignPatterns.Visitor\DesignPatterns.Visitor.csproj", "{DCE06EB6-BAB5-4573-AF67-128DBCCDB90C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Behavioral", "Behavioral", "{7FF0E83F-EBEB-4103-BCD1-2F100E82FCD1}"
 EndProject
