@@ -7,6 +7,14 @@ namespace DesignPatterns.Visitor.UnitTests;
 
 public class SizeVisitorTests
 {
+    [Fact]
+    public void GivenSize_WhenCallVisit_ThenInvalidOperationExceptionThrown()
+    {
+        var sizeVisitor = new SizeVisitor(Enumerable.Empty<ISizeConverter<ISize>>());
+        var action = () => sizeVisitor.Visit(default);
+        action.ShouldThrow<InvalidOperationException>();
+    }
+
     [Theory]
     [MemberData(nameof(TestCases))]
     public void GivenSize_WhenCallVisit_ThenResultAsExpected(ISize size, ISize expectedResult)
@@ -16,14 +24,14 @@ public class SizeVisitorTests
         actualResult.ShouldBeEquivalentTo(expectedResult);
     }
 
-    private IVisitor<ISize, ISize> GetSut() => new SizeVisitor(
-    [
-        new KiloBytesToBytesConverter(),
-        new MegaBytesToBytesConverter(),
-        new GigaBytesToBytesConverter(),
-        new TeraBytesToBytesConverter(),
-        new PetaBytesToBytesConverter()
-    ]);
+    private IVisitor<ISize, ISize> GetSut() =>
+        new SizeVisitor([
+            new KiloBytesToBytesConverter(),
+            new MegaBytesToBytesConverter(),
+            new GigaBytesToBytesConverter(),
+            new TeraBytesToBytesConverter(),
+            new PetaBytesToBytesConverter()
+        ]);
 
     public static IEnumerable<object[]> TestCases()
     {

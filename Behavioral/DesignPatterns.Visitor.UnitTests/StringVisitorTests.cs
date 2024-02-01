@@ -24,4 +24,34 @@ public class StringVisitorTests
         result.ShouldBeOfType(expectedType);
         result.Value.ShouldBe(expectedValue);
     }
+
+    [Fact]
+    public void GivenNull_WhenCallVisit_ThenArgumentExceptionThrown()
+    {
+        var stringVisitor = new StringVisitor();
+        var action = () => stringVisitor.Visit(null!);
+        action.ShouldThrow<ArgumentException>();
+    }
+
+    [Theory]
+    [InlineData("1ZB")]
+    public void GivenInvalidValue_WhenCallVisit_ThenArgumentExceptionThrown(string value)
+    {
+        var stringVisitor = new StringVisitor();
+        var action = () => stringVisitor.Visit(value);
+        action
+            .ShouldThrow<ArgumentException>()
+            .Message.ShouldBe("Could not parse the provided value. (Parameter 'size')");
+    }
+
+    [Theory]
+    [InlineData("1EB")]
+    public void GivenUnknownSizeUnit_WhenCallVisit_ThenArgumentOutOfRangeExceptionThrown(string value)
+    {
+        var stringVisitor = new StringVisitor();
+        var action = () => stringVisitor.Visit(value);
+        action
+            .ShouldThrow<ArgumentOutOfRangeException>()
+            .Message.ShouldBe("Unknown size unit. (Parameter 'size')");
+    }
 }

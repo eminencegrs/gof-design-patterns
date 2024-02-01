@@ -12,12 +12,12 @@ public class StringVisitor : IVisitor<string, ISize>
             throw new ArgumentException("Input size string cannot be null or empty.", nameof(size));
         }
 
-        var regexPattern = @"^(?<value>\d+(\.\d+)?)\s*(?<unit>[KMGTP]?B)$";
+        var regexPattern = @"^(?<value>\d+(\.\d+)?)\s*(?<unit>[KMGTPE]?B)$";
         var match = Regex.Match(size, regexPattern, RegexOptions.IgnoreCase);
 
         if (!match.Success)
         {
-            throw new ArgumentException("Invalid size format.", nameof(size));
+            throw new ArgumentException("Could not parse the provided value.", nameof(size));
         }
 
         var value = long.Parse(match.Groups["value"].Value);
