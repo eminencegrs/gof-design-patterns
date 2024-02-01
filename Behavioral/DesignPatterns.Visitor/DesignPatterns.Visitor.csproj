@@ -9,4 +9,8 @@
         <RootNamespace>DesignPatterns.Visitor</RootNamespace>
     </PropertyGroup>
 
+    <ItemGroup>
+        <PackageReference Include="Shouldly" Version="4.2.1" />
+    </ItemGroup>
+
 </Project>

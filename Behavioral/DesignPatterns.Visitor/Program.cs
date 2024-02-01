@@ -1,41 +1,15 @@
 ﻿using DesignPatterns.Visitor;
-using DesignPatterns.Visitor.Converters;
 
-// var context = new Context();
-// var discountVisitor = new SizeVisitor();
-// var handler = new Handler(new[] { discountVisitor });
-// var data = context.GetData();
-// var convertedInGB = handler.Process(data.itemsInBytes);
-// var convertedInBytes = handler.Process(data.itemsInGB);
-//
-// Console.WriteLine();
+var context = new Context();
+var handler = new Handler();
+var data = context.GetData();
+var sizes = handler.ProcessStrings(data.strings, [context.GetStringVisitor()]).ToList();
+var finalSizes = handler.ProcessSizes(sizes, [context.GetSizeVisitor()]).ToList();
 
-var strings = new List<string>
+Console.WriteLine("| String Data | Sizes       | Final Sizes              |");
+Console.WriteLine("|-------------|-------------|--------------------------|");
+
+for (var i = 0; i < data.strings.Count; i++)
 {
-    "100KB",
-    "200 KB",
-    "10 MB",
-    "200MB",
-    "1GB",
-    "20 GB"
-};
-
-var visitor = new StringVisitor();
-
-var result = new List<ISize>();
-result.AddRange(strings.Select(x => x.Accept(visitor)));
-
-var amountVisitor = new SizeVisitor(
-    new List<ISizeConverter<ISize>>
-    {
-        new KiloBytesToBytesConverter(),
-        new MegaBytesToBytesConverter(),
-        new GigaBytesToBytesConverter(),
-        new TeraBytesToBytesConverter(),
-        new PetaBytesToBytesConverter(),
-    });
-
-var newResult = new List<ISize>();
-newResult.AddRange(result.Select(x => x.Accept(amountVisitor)));
-
-Console.WriteLine();
+    Console.WriteLine($"| {data.strings.ElementAt(i),-11} | {sizes.ElementAt(i),-11} | {finalSizes.ElementAt(i),-24} |");
+}

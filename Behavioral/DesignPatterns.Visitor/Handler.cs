@@ -1,15 +1,30 @@
-// namespace DesignPatterns.Visitor;
-//
-// public class Handler(IEnumerable<IVisitor> visitors)
-// {
-//     public IEnumerable<IAmount> Process(ICollection<IAmount> sizes)
-//     {
-//         var result = new List<IAmount>();
-//         foreach (var visitor in visitors)
-//         {
-//             result.AddRange(sizes.Select(size => size.Accept(visitor)));
-//         }
-//
-//         return result;
-//     }
-// }
+namespace DesignPatterns.Visitor;
+
+public class Handler
+{
+    public IEnumerable<ISize> ProcessStrings(
+        ICollection<string> sizes,
+        IEnumerable<IVisitor<string, ISize>> visitors)
+    {
+        var result = new List<ISize>();
+        foreach (var visitor in visitors)
+        {
+            result.AddRange(sizes.Select(x => x.Accept(visitor)));
+        }
+
+        return result;
+    }
+
+    public IEnumerable<ISize> ProcessSizes(
+        ICollection<ISize> sizes,
+        IEnumerable<IVisitor<ISize, ISize>> visitors)
+    {
+        var result = new List<ISize>();
+        foreach (var visitor in visitors)
+        {
+            result.AddRange(sizes.Select(x => x.Accept(visitor)));
+        }
+
+        return result;
+    }
+}

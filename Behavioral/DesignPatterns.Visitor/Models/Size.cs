@@ -9,4 +9,6 @@ public record class Size : ISize
     {
         return visitor.Visit(this);
     }
+
+    public sealed override string ToString() => $"{this.Value.ToString()} {this.Unit}";
 }
