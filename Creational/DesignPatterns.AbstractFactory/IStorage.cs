@@ -2,12 +2,6 @@ namespace DesignPatterns.AbstractFactory;
 
 public interface IStorage
 {
-}
-
-public class Disk : IStorage
-{
-}
-
-public class DataLakeStorage : IStorage
-{
+    Task<IPath> CreateDirectory(string name);
+    Task<IPath> CreateFile(string name);
 }
