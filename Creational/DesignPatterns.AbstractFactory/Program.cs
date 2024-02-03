@@ -1,3 +1,9 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Hosting;
 
-Console.WriteLine("Hello, World!");
+var host = Host.CreateDefaultBuilder(args)
+    .ConfigureAppConfiguration(ctx => ctx.AddJsonFile("appsettings.json"))
+    .ConfigureServices(services => { })
+    .Build();
+
+Console.WriteLine();
