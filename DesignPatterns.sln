@@ -16,6 +16,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Structural", "Structural", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatterns.Decorator", "Structural\DesignPatterns.Decorator\DesignPatterns.Decorator.csproj", "{FA3C4F09-104E-4F7D-9ADB-E7F22917ADF7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatterns.Singleton", "Creational\DesignPatterns.Singleton\DesignPatterns.Singleton.csproj", "{658DB1C6-AC85-4E03-99C4-C79116E558F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatterns.Singleton.UnitTests", "Creational\DesignPatterns.Singleton.UnitTests\DesignPatterns.Singleton.UnitTests.csproj", "{FFB0861F-5182-40CA-BD19-33BCB0FBA4F6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,6 +46,14 @@ Global
 		{FA3C4F09-104E-4F7D-9ADB-E7F22917ADF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA3C4F09-104E-4F7D-9ADB-E7F22917ADF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FA3C4F09-104E-4F7D-9ADB-E7F22917ADF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{658DB1C6-AC85-4E03-99C4-C79116E558F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{658DB1C6-AC85-4E03-99C4-C79116E558F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{658DB1C6-AC85-4E03-99C4-C79116E558F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{658DB1C6-AC85-4E03-99C4-C79116E558F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFB0861F-5182-40CA-BD19-33BCB0FBA4F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFB0861F-5182-40CA-BD19-33BCB0FBA4F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFB0861F-5182-40CA-BD19-33BCB0FBA4F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFB0861F-5182-40CA-BD19-33BCB0FBA4F6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{DCE06EB6-BAB5-4573-AF67-128DBCCDB90C} = {7FF0E83F-EBEB-4103-BCD1-2F100E82FCD1}
@@ -49,5 +61,7 @@ Global
 		{0C5CFC73-F6E4-4796-A11C-9CA378B80517} = {AE005ED4-5F0B-4AF9-81AE-AAE3AD6F8901}
 		{1E56CC89-45C1-45F7-9EC8-88D648572816} = {AE005ED4-5F0B-4AF9-81AE-AAE3AD6F8901}
 		{FA3C4F09-104E-4F7D-9ADB-E7F22917ADF7} = {5961ADCC-5FA6-4076-A9F4-C1D3207ABE1A}
+		{658DB1C6-AC85-4E03-99C4-C79116E558F5} = {AE005ED4-5F0B-4AF9-81AE-AAE3AD6F8901}
+		{FFB0861F-5182-40CA-BD19-33BCB0FBA4F6} = {AE005ED4-5F0B-4AF9-81AE-AAE3AD6F8901}
 	EndGlobalSection
 EndGlobal

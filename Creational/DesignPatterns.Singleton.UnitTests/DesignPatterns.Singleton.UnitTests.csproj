@@ -30,7 +30,11 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\DesignPatterns.AbstractFactory\DesignPatterns.AbstractFactory.csproj" />
+      <ProjectReference Include="..\DesignPatterns.Singleton\DesignPatterns.Singleton.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\DesignPatterns.Singleton\DesignPatterns.Singleton.csproj" />
     </ItemGroup>
 
 </Project>
