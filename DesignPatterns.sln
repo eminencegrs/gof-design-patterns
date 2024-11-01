@@ -32,6 +32,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatterns.Builder.Unit
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatterns.Strategy", "Behavioral\DesignPatterns.Strategy\DesignPatterns.Strategy.csproj", "{847A94E0-6BC0-4604-B182-0A445CC550AD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatterns.Strategy.UnitTests", "Behavioral\DesignPatterns.Strategy.UnitTests\DesignPatterns.Strategy.UnitTests.csproj", "{625CD08D-2C39-42B2-BAB6-B75DE65F00E6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -90,6 +92,10 @@ Global
 		{847A94E0-6BC0-4604-B182-0A445CC550AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{847A94E0-6BC0-4604-B182-0A445CC550AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{847A94E0-6BC0-4604-B182-0A445CC550AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{625CD08D-2C39-42B2-BAB6-B75DE65F00E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{625CD08D-2C39-42B2-BAB6-B75DE65F00E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{625CD08D-2C39-42B2-BAB6-B75DE65F00E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{625CD08D-2C39-42B2-BAB6-B75DE65F00E6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{DCE06EB6-BAB5-4573-AF67-128DBCCDB90C} = {7FF0E83F-EBEB-4103-BCD1-2F100E82FCD1}
@@ -105,5 +111,6 @@ Global
 		{727C96E6-5B0E-43BE-BB4E-2D06F40E51BF} = {AE005ED4-5F0B-4AF9-81AE-AAE3AD6F8901}
 		{774BAD81-C8DA-4491-B53C-F023A8235AA7} = {AE005ED4-5F0B-4AF9-81AE-AAE3AD6F8901}
 		{847A94E0-6BC0-4604-B182-0A445CC550AD} = {7FF0E83F-EBEB-4103-BCD1-2F100E82FCD1}
+		{625CD08D-2C39-42B2-BAB6-B75DE65F00E6} = {7FF0E83F-EBEB-4103-BCD1-2F100E82FCD1}
 	EndGlobalSection
 EndGlobal

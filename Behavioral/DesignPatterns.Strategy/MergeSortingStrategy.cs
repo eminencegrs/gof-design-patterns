@@ -4,7 +4,9 @@ public class MergeSortingStrategy : ISortingStrategy
 {
     public void Sort<T>(List<T> list) where T : IComparable<T>
     {
-        list = this.MergeSort(list);
+        var sortedList = this.MergeSort(list);
+        list.Clear();
+        list.AddRange(sortedList);
     }
 
     private List<T> MergeSort<T>(List<T> list) where T : IComparable<T>
