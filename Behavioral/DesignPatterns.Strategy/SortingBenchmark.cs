@@ -1,7 +1,9 @@
+using System.Diagnostics.CodeAnalysis;
 using BenchmarkDotNet.Attributes;
 
 namespace DesignPatterns.Strategy;
 
+[ExcludeFromCodeCoverage]
 public class SortingBenchmark
 {
     private readonly ISortingStrategy quickSortingStrategy = new QuickSortingStrategy();
