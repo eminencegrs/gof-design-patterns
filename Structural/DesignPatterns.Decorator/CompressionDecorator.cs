@@ -1,3 +1,5 @@
+using System.IO.Compression;
+
 namespace DesignPatterns.Decorator;
 
 internal class CompressionDecorator : UploaderDecorator
@@ -9,10 +11,9 @@ internal class CompressionDecorator : UploaderDecorator
 
     public override async Task Upload(string name, Stream stream)
     {
-        // TODO: add compression logic here.
-        Console.WriteLine($"{nameof(CompressionDecorator)}.{nameof(Upload)}: started compressing a file...");
-        await Task.Delay(1000);
-        Console.WriteLine($"{nameof(CompressionDecorator)}.{nameof(Upload)}: completed compressing a file.");
-        await base.Upload(name, stream);
+        using MemoryStream compressedStream = new MemoryStream();
+        await using var compressor = new GZipStream(compressedStream, CompressionMode.Compress);
+        await stream.CopyToAsync(compressor);
+        await base.Upload(name, compressor.BaseStream);
     }
 }
